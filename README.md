@@ -1,6 +1,21 @@
 # Shopping_Mall
 스프링부트 쇼핑몰 프로젝트 with JPA
 
+## Branch Description
+
+```
+스프링 쇼핑몰 프로젝트 개발을 진행하면서 학습한 내용을 Branch로 구분하여 정리하였습니다.
+총 8개의 Branch로 구성되어 있습니다.
+1. Info&Setting (개발환경구축)
+2. SpringDataJPA (Spring Data ORM인 JPA)
+3. Thymeleaf (Thymeleaf 템플릿 엔진의 사용) 
+4. SpringSecurity (스프링 시큐리티를 이용한 회원 가입 및 로그인)
+5. Mapping (연관 관계 매핑)
+6. Enroll&Search (상품 등록 및 조회하기)
+7. Order (주문)
+8. Basket (장바구니)
+```
+
 ## 개발환경
 ![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/71b39261-c9e6-4718-afd0-bd74a763ef55)
 ```
