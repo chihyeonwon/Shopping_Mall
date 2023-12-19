@@ -55,6 +55,16 @@ H2 Database : H2 Database는 자바 기반의 관계형 데이터베이스로 �
 데이터를 영구적으로 저장하는 데 권장되는 데이터베이스는 아니지만 위의 장점들 때문에 테스트용 데이터베이스로 많이 사용합니다.
 ```
 
+## LomBok 라이브러리 설정
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/2b5c2054-4af9-4159-aa75-3a4368387d7d)    
+```
+LomBok 라이브러리는 반복적인 Getter/Setter, ToString과 같은 자바 코드를 컴파일할 때 자동으로 생성해주는 라이브러리입니다.
+LomBok 라이브러리를 사용하면 반복적인 소스코드를 제거할 수 있으므로 코드를 좀 더 깔끔하게 짤 수 있습니다.
+
+File -Setting - Plugin에서 Lombok 라이브러리를 install한 후 File-setting-build, Excution, Deployment, compiler에서
+annotation Processors를 체크하여 활성화합니다.
+```
+
 ## MySQL 설정
 ![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/1631c80d-b3f1-4a4e-a614-b2f81805a7ef)       
 ![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/92b13cbf-da67-40a5-a5ad-7f09f8861fc1)    
