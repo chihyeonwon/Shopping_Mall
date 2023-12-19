@@ -23,8 +23,8 @@ OS : Window 10 +
 IDE : IntelliJ
 JDK : JDK 21
 Spring Boot version : 3.2.0
-Database : MySQL
-Build Tool : Maven
+  Database : MySQL
+  Build Tool : Maven
 ```
 
 ## Spring Boot Project 생성
@@ -53,5 +53,32 @@ MySQL Driver : 프로젝트에서 사용하는 데이터베이스는 MySQL 이�
 H2 Database : H2 Database는 자바 기반의 관계형 데이터베이스로 매우 가볍고 빠른 데이터베이스입니다.
 디스크 기반의 데이터 저장뿐만 아니라 메모리 내의 데이터를 저장하는 인메모리 데이터베이스 기능을 지원합니다
 데이터를 영구적으로 저장하는 데 권장되는 데이터베이스는 아니지만 위의 장점들 때문에 테스트용 데이터베이스로 많이 사용합니다.
+```
 
+## MySQL 설정
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/1631c80d-b3f1-4a4e-a614-b2f81805a7ef)       
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/92b13cbf-da67-40a5-a5ad-7f09f8861fc1)    
+```
+MySQL 초기 설정은 컴퓨터공학과 학부 데이터베이스 수업 때 사용한 설정을 그대로 사용하였습니다.
+username:root, password=root port=3306 
+root 계정에 접속하고 프로젝트에서 사용할 shop이라는 데이터베이스를 생성하였습니다.
+```
+
+## application.properties 설정
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/f1569e4b-9092-4e9a-8993-23a795b8d7a8)
+```
+데이터베이스에 연결하기 위해 mysql jdbc driver 설정하고 연결할 데이터베이스의 url, port, db name을 입력합니다.
+db를 설치할 때 입력한 아이디와 비밀번호를 입력하고, 데이터베이스 초기화전략을 create로 설정합니다.
+sql 벤더중 MySQL 데이터베이스를 사용하라고 지시합니다. MySQL8Dialect 만약 오라클의 Dialect를 설정한다면 이 부분을
+수정해주면 됩니다.
+
+초기화전략에는 5가지의 옵션이 있습니다.
+none : 사용하지 않음
+validate: 엔티티와 테이블 정상 매핑 확인
+
+create : 기존 테이블 삭제 후 테이블 생성
+create-drop: 기존 테이블 삭제 후 테이블 생성, 종료 시점에 테이블 삭제
+update : 변경된 스키마 적용 -> 삭제x, 컬럼 추가만 반영
+
+실제 운영환경에서는 none, validate를 사용하고 현재 운영환경이 아니므로 개발 편의상 create로 설정하였습니다. 
 ```
