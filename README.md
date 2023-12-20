@@ -39,6 +39,8 @@ JpaRepository에서 지원하는 엔티티를 관리하는 매니징 메소드�
 ![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/7fab6a86-fc39-4b1c-a355-59e276cde3d1)
 #### ItemRepositoryTest 파일 작성
 ![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/a784b0fe-d9a8-4d8d-95bd-592b44ecaa74)
+#### Repository 인터페이스를 사용하여 상품 데이터 저장
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/ff08a1d7-dc5b-4edd-ba0c-5fe183540461)
 ```
 먼저 테스트용 Database인 H2 데이터베이스를 사용하기 위해서 이를 위한 properties 파일을 별도로 작성합니다.
 resources 아래에 application-test.properties를 작성합니다.
@@ -51,4 +53,7 @@ resources 아래에 application-test.properties를 작성합니다.
 
 @Autowired : ItemRepository를 사용하기 위해 Bean 주입
 @Test, @DisplayName <- JUnit 테스트 이름 지정
+
+인터페이스를 사용하면 따로 insert query를 작성하지 않아도 메서드(createItemTest())를 통해서
+객체를 동적으로 생성하여 상품 데이블에 데이터를 insert 할 수 있습니다.
 ```
