@@ -33,3 +33,22 @@ JpaRepository에서 지원하는 엔티티를 관리하는 매니징 메소드�
 이 메소드를 사용하면 엔티티의 저장 및 수정(<S extends T> save (S entity)), 엔티티의 삭제(void delete(T entity)
 엔티티의 총 개수 반환(count()), 모든 엔티티 조회(Iterable<T> findAll())을 사용할 수 있습니다.
 ```
+
+## JUnit 테스트 파일 작성
+#### application-test.properites 작성
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/7fab6a86-fc39-4b1c-a355-59e276cde3d1)
+#### ItemRepositoryTest 파일 작성
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/a784b0fe-d9a8-4d8d-95bd-592b44ecaa74)
+```
+먼저 테스트용 Database인 H2 데이터베이스를 사용하기 위해서 이를 위한 properties 파일을 별도로 작성합니다.
+resources 아래에 application-test.properties를 작성합니다.
+
+테스트 파일을 생성하기 위해 repository 아래의 ItemRepository -> Go To -> Test를 클릭합니다.
+
+테스트파일에 작성된 어노테이션은 다음과 같습니다.
+@SpringBoot : 모든 Bean을 Ioc 컨테이너에 등록하기 위함
+@TestPropertySource(location="classpath:경로") <- 상위 적용할 파일의 경로를 지정(application.properties < application-test.properties)
+
+@Autowired : ItemRepository를 사용하기 위해 Bean 주입
+@Test, @DisplayName <- JUnit 테스트 이름 지정
+```
