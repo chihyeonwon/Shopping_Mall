@@ -57,3 +57,23 @@ resources 아래에 application-test.properties를 작성합니다.
 인터페이스를 사용하면 따로 insert query를 작성하지 않아도 메서드(createItemTest())를 통해서
 객체를 동적으로 생성하여 상품 데이블에 데이터를 insert 할 수 있습니다.
 ```
+
+## 쿼리 메소드
+#### ItemRepository
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/0f53eca2-0ea2-4837-9c2c-bf05bd16860b)
+#### ItemRepositoryTest
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/13905e63-0bbf-4399-8d22-59539b4904c6)
+#### 테스트 실행 결과
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/c0341914-43e9-46a4-968e-c4f42d78cb7c)
+```
+쿼리 메소드 문법 : find + (엔티티이름 생략가능) + By + 변수이름
+itemNm(상품명)으로 데이터를 조회하기 위해서 findByItemNm으로 메소드명을 만들어줍니다.
+기존 ItemRepository 인터페이스에 이 메소드를 추가합니다.
+
+테스트 파일에서 createItem 메소드에서 상품 10개를 추가하고 테스트 상품1을 findByItemNm 메소드의 매개변수로
+넘겨주었습니다.
+
+조회 결과 얻은 item 객체들을 출력하도록 함수를 생성하였습니다.
+
+테스트 실행 결과 Select 쿼리문이 실행되는 것을 알 수 있습니다. where 절에 item_nm이 조건으로 걸려있는 것을 확인할 수 있습니다.
+```
