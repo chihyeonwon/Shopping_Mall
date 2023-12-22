@@ -89,7 +89,7 @@ itemNm(상품명)으로 데이터를 조회하기 위해서 findByItemNm으로 �
 
 테스트 실행 결과 상품명과 상품 상세 설명 매개변수로 넘겨준 데이터를 Select 쿼리로 찾습니다.
 ```
-#### LessThan 조건 처리하ㅣ
+#### LessThan 조건 처리하기
 #### ItemRepository
 ![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/a31510bb-2e80-4135-9214-ad5e27c50d54)
 #### ItemRepository Test
@@ -100,4 +100,17 @@ itemNm(상품명)으로 데이터를 조회하기 위해서 findByItemNm으로 �
 매개변수로 넘어온 price 변수보다 값이 작은 상품 데이터를 조회하는 쿼리 메소드입니다.
 
 상품가격 데이터는 10001~10010입니다. 10005 보다 작은 10001, 10002, 10003, 10004 4개의 상품이 출력되는 것을 알 수 있습니다. 
+```
+#### OrderBy로 정렬 처리하기
+#### ItemRepository
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/b3618b1e-cb16-4a40-acc1-fc206fc789bc)
+#### ItemRepository Test
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/4a4268f5-f3b1-4f22-9b3e-69e667ad6504)
+#### OrderBy 테스트 실행 결과
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/d8936a9a-4c4d-4afc-810f-142baa0adc48)
+```
+상품의 가격이 높은 순으로 조회하는(Desc 내림차순) 쿼리 메소드입니다.
+문법 : findByPriceLessThanOrderByPriceDesc
+
+테스트 실해 결과 상품가격이 높은 순으로 출력되는 것을 확인할 수 있습니다.
 ```
