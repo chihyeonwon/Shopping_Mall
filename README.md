@@ -77,3 +77,15 @@ itemNm(상품명)으로 데이터를 조회하기 위해서 findByItemNm으로 �
 
 테스트 실행 결과 Select 쿼리문이 실행되는 것을 알 수 있습니다. where 절에 item_nm이 조건으로 걸려있는 것을 확인할 수 있습니다.
 ```
+#### OR 조건 처리하기
+#### ItemRepository
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/96b6ef3d-8e26-489e-a859-1cfb4c49123c)
+#### ItemRepository Test
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/cad582f4-8c63-4cab-be5a-4ccb58d1a138)
+#### OR 테스트 실행 결과
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/d3ef2c4b-6fe5-4e94-9f39-eeec1a0c5c6c)
+```
+상품을 상품명과 상품 상세 설명을 OR 조건을 이용하여 조회하는 쿼리메소드입니다.
+
+테스트 실행 결과 상품명과 상품 상세 설명 매개변수로 넘겨준 데이터를 Select 쿼리로 찾습니다.
+```
