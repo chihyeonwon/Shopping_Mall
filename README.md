@@ -89,3 +89,15 @@ itemNm(상품명)으로 데이터를 조회하기 위해서 findByItemNm으로 �
 
 테스트 실행 결과 상품명과 상품 상세 설명 매개변수로 넘겨준 데이터를 Select 쿼리로 찾습니다.
 ```
+#### LessThan 조건 처리하ㅣ
+#### ItemRepository
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/a31510bb-2e80-4135-9214-ad5e27c50d54)
+#### ItemRepository Test
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/683e0813-ca9c-419d-b38d-e9d213dd5620)
+#### LessThan 테스트 실행 결과
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/8aa4a6e8-3595-444c-8165-f1b613a7ee35)
+```
+매개변수로 넘어온 price 변수보다 값이 작은 상품 데이터를 조회하는 쿼리 메소드입니다.
+
+상품가격 데이터는 10001~10010입니다. 10005 보다 작은 10001, 10002, 10003, 10004 4개의 상품이 출력되는 것을 알 수 있습니다. 
+```
