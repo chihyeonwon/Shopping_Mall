@@ -128,3 +128,17 @@ JPQL이라는 언어를 통해서 복잡한 쿼리를 처리할 수 있습니다
 파라미터로 테스트 상품 상세 설명을 전달하고 itemDetail 속성에 테스트 상품 상세 설명이라는 문자가 포함되면
 가격을 기준으로 내림차순하여 결과를 표시합니다.
 ```
+#### @Query -nativeQuery 속성 사용
+#### ItemRepository
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/e189ed33-d60f-49f4-abfa-2403e2fb9b72)
+#### ItemRepository Test
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/554dec22-7d36-4be7-9a11-4a86a607dc8b)
+#### @Query -nativeQuery 테스트 실행 결과
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/3763a88b-daa0-4b7c-8f30-b90e2b707dc9)
+```
+@Query의 nativeQuery = true 속성을 사용하면 기존 데이터베이스에서 사용하던 쿼리를 그대로 사용할 수 있습니다.
+하지만 특정 데이터베이스에 종속되는 쿼리문을 이용하기 때문에 데이터베이스에 독립적이라는 장점은 잃어버립니다.
+기존에 작성한 통계용 쿼리처럼 복잡한 쿼리를 그대로 사용해야 하는 경우에 활용할 수 있습니다.
+
+문법은 value 안에 네이티브 쿼리문을 작성하고 "nativeQuery=ture"를 지정합니다.
+```
