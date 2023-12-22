@@ -68,11 +68,21 @@ class ItemRepositoryTest {
         }
     }*/
 
-    @Test
+    /*@Test
     @DisplayName("가격 내림차순 조회 테스트")
     public void findByPriceLessThanOrderByPriceDescTest() {
         this.createItemList();
         List<Item> itemList = itemRepository.findByPriceLessThanOrderByPriceDesc(10005);
+        for(Item item: itemList){
+            System.out.println(item.toString());
+        }
+    }*/
+
+    @Test
+    @DisplayName("@Query를 이용한 상품 조회 테스트")
+    public void findByItemDetailTest(){
+        this.createItemList();
+        List<Item> itemList = itemRepository.findByItemDetail("테스트 상품 상세 설명");
         for(Item item: itemList){
             System.out.println(item.toString());
         }
