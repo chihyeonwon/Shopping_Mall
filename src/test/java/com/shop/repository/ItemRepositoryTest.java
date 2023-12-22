@@ -23,7 +23,7 @@ class ItemRepositoryTest {
 
     @Test
     @DisplayName("상품 저장 테스트")
-    public void createItemTest() {
+    public void createItemList() {
         for (int i = 1; i <= 10; i++) {
             Item item = new Item();
             item.setItemNm("테스트 상품" + i);
@@ -41,9 +41,19 @@ class ItemRepositoryTest {
     @Test
     @DisplayName("상품 조회 테스트")
     public void findByItemNmTest() {
-        this.createItemTest();
+        this.createItemList();
         List<Item> itemList = itemRepository.findByItemNm("테스트 상품1");
         for(Item item: itemList) {
+            System.out.println(item.toString());
+        }
+    }
+
+    @Test
+    @DisplayName("상품명, 상품상세설명 or 테스트")
+    public void findByItemNmOrItemDetailTest() {
+        this.createItemList();
+        List<Item> itemList = itemRepository.findByItemNmOrItemDetail("테스트 상품1", "테스트 상품 상세 설명5");
+        for(Item item: itemList){
             System.out.println(item.toString());
         }
     }
