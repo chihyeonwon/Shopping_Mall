@@ -142,3 +142,43 @@ JPQL이라는 언어를 통해서 복잡한 쿼리를 처리할 수 있습니다
 
 문법은 value 안에 네이티브 쿼리문을 작성하고 "nativeQuery=ture"를 지정합니다.
 ```
+
+## Spring DATA JPA Querydsl
+#### Querydsl setting error 해결
+(Querydsl setting error solve)[https://gallery-k.tistory.com/297]
+#### pom.xml
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/59ec0012-d96e-4e6d-92dd-bdfa7de6f389)
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/27203f61-d470-4b0a-af87-5ee471bbd797)
+#### Maven Build
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/ab6cedfe-6f7a-4971-a010-4c15944dff71)    
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/7d660a17-d40c-4e73-b420-8efda48446c6)    
+```
+@Query 어노테이션 안에 JPQL 문법으로 문자열을 입력하기 때문에 잘못 입력하면 컴파일 시점에 오류를 찾기 어렵습니다.
+이를 보완할 수 있는 방법인 QUerydsl을 사용합니다.
+
+Querydsl은 소스코드로 SQL문을 문자열이 아닌 코드로 작성하기 때문에 컴파일러의 도움을 받을 수 있습니다.
+고정된 SQL문이 아닌 조건에 맞는 쿼리를 동적으로 생성할 수 있습니다.
+
+Querydsl을 사용하기 위해 pom.xml파일에서 몇가지 의존성을 추가해줍니다.
+
+또한 Qdomain이라는 자바코드를 생성해주는 플러그인을 추가해줍니다.
+엔티티를 기반으로 접두사 Q가 붙는 클래스들을 자동으로 생성해주는 플러그인입니다.
+예를 들어 Item 테이블의 경우 QItem.java 클래스가 자동으로 생성됩니다.
+Querydsl을 통해서 쿼리를 생성할 때는 이러한 Qdomain 객체를 사용합니다.
+
+Querydsl 사용을 위한 의존성과 플러그인을 추가하고 maven - reload all maven projects를 눌러서 동기화를 진행한 후
+compile을 눌러서 target/generated-sources/java 
+
+오류 해결 : Querydsl 의존성 주입 중 오류가 발생했는데 버전을 주석처리하면 Qdomain 클래스가 build된다.
+
+QItem 엔티티가 새로 생성되었음을 확인할 수 있다.
+```
+
+
+
+
+
+
+
+
+
