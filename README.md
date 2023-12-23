@@ -173,6 +173,21 @@ compile을 눌러서 target/generated-sources/java
 
 QItem 엔티티가 새로 생성되었음을 확인할 수 있다.
 ```
+## JPAQueryFactory를 이용한 상품 조회
+#### ItemRepository Test
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/5b9627e6-52e7-40fd-bb8c-f0dfeacaf239)
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/fccbbf23-6b3d-48c8-975d-5cd4911dbd54)
+
+#### JPAQueryFactory를 이용한 쿼리 결과
+
+```
+영속성 컨텍스트를 사용하기 위해 @PersistenceContext 어노테이션을 사용하고 EntitYManager em 객체를 생성합니다.
+JPAQueryFactory를 이용하여 쿼리를 동적으로 생성하고 생성자의 파라미터로 EntityManager 객체를 넣어줍니다.
+Querydsl을 통해 쿼리를 생성하기 위해 플러그인을 통해서 생성된 QItem 객체를 사용합니다.
+
+자바 소스코드이지만 SQL과 비슷하게 소스를 작성할 수 있습니다.
+JPAQuery 메소드 중 하나인 fetch를 이용해서 쿼리 결과를 리스트로 반환합니다. 
+```
 
 
 
