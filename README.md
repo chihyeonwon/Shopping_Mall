@@ -23,9 +23,27 @@ Controller에서 넘겨준 데이터가 화면에 출력되는 것을 알 수 �
 #### ShopApplication 실행결과
 ![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/dc763957-1698-4a80-9127-93740faab1e3)
 
+## Spring Boot Devtools
+```
+Spring Boot Devetools는 애플리케이션 개발 시 생산성을 향상시킬 수 있는 유용한 기능들을 제공합니다.
+그 중 세 가지(Automatic Restart, Live Reload, Property Defaults)를 활성화해보겠습니다.
+```
+#### Automatic Restart 적용하기
+#### pom.xml
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/e9c6008c-b04e-402d-ba8f-a4ec4b72138b)
+```
+spring boot devtools 의존성을 추가합니다.
+```
+#### Automatic Restart
+[IntelliJ 자동빌드 설정 방법](https://velog.io/@jodawooooon/IntelliJ-%EC%9E%90%EB%8F%99-%EB%B9%8C%EB%93%9C-%EC%84%A4%EC%A0%95-%EB%B0%A9%EB%B2%95-Registry%EC%97%90-compiler.automake.allow.when.app.running%EC%9D%B4-%EC%97%86%EB%8A%94-%EA%B2%BD%EC%9A%B0)
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/93c7182a-f9e2-466a-b810-2be1fe86ff9e)     
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/f22e8b30-f9a7-49a2-8363-eb76051ae12c)       
+```
+21.2 버전 이전에는 shift를 두 번 눌러서 나오는 registry-compiler에서 변경을 하고 이후는 setting-advanced setting-compiler
+에서 allow autom-make to start even if ~를 체크해줍니다.
 
-
-
+file-settings-build, execution, deployment - compiler 메뉴에서 build project automatically에 체크해줍니다.
+```
 
 
 
