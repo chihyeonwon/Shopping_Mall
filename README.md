@@ -44,6 +44,14 @@ spring boot devtools 의존성을 추가합니다.
 
 file-settings-build, execution, deployment - compiler 메뉴에서 build project automatically에 체크해줍니다.
 ```
-
-
+#### Live Reload 적용하기
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/7da3e77c-b47d-4aab-ab12-947655234e54)
+```
+application.properties 에 Live Reload 적용 설정을 추가합니다.
+```
+#### 크롬 확장 프로그램 추가
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/a9348746-8b60-4bc2-9515-71e5bc1af2e2)
+```
+LiveReload 확장 프로그램을 설치하고 모든 사이트에서 적용이 가능하도록 설정합니다.
+```
 
