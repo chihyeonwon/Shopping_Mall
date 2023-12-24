@@ -54,4 +54,9 @@ application.properties 에 Live Reload 적용 설정을 추가합니다.
 ```
 LiveReload 확장 프로그램을 설치하고 모든 사이트에서 적용이 가능하도록 설정합니다.
 ```
-
+#### Property Defaults 적용하기
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/5c5009b1-e8ca-43fe-a0c2-8de846ecdaf9)
+```
+pom.xml에 spring.thymeleaf.cache=faslse를 추가합니다 false는 개발환경에서 캐싱 기능을 꺼두는 방법으로
+true는 운영환경에서 캐싱 기능을 키는 방법으로 관리할 수 있습니다.
+```
