@@ -147,7 +147,7 @@ JPQL이라는 언어를 통해서 복잡한 쿼리를 처리할 수 있습니다
 #### Querydsl setting error 해결
 (Querydsl setting error solve)[https://gallery-k.tistory.com/297]
 #### pom.xml
-![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/59ec0012-d96e-4e6d-92dd-bdfa7de6f389)
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/acf502a9-bf11-4388-a313-8cef16da584b)
 ![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/27203f61-d470-4b0a-af87-5ee471bbd797)
 #### Maven Build
 ![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/ab6cedfe-6f7a-4971-a010-4c15944dff71)    
@@ -189,7 +189,26 @@ JPAQuery 메소드 중 하나인 fetch를 이용해서 쿼리 결과를 리스�
 
 자바소스 코드를 이용해서 고정된 쿼리문이 아닌 비즈니스 로직에 따라서 동적으로 쿼리문을 생성해줄 수 있습니다.
 ```
+#### QuerydslPredicateExecutor를 이용한 상품 조회
+#### ItemRepository
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/acbb7ece-655c-4db9-a922-8212def427f7)
+#### ItemRepository Test
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/423657cf-a2c1-46db-8ca9-21902803b610)    
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/44fdc7d0-6f12-418c-90c8-fb2f46f3b0c8)
+#### QuerydslPredicateExecutor 실행 결과
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/3bc01d59-4c6c-4d88-b628-5a24c8ab6bd0)
+```
+QuerydslPredicateExecutor 인터페이스 상속을 ItemRepository 클래스에 추가합니다.
+QuerydslPredicateExecutor는 조건이 맞다고 판단하는 근거를 함수로 제공할 수 있습니다.
 
+Test에서 1~5번까지는 판매상태가 SELL인 상품을 6~10번까지는 판매상태가 SOLD_OUT인 상품을 추가하는 메소드를
+추가하고 쿼리에 들어갈 조건을 만들어주는 booleanBuilder 객체를 생성한 후 조건을 and로 넣어줍니다.
+판매 상세 설명이 테스트 상품 상세 설명을 포함하고 가격이 10003이상이면서 판매상태가 SELL인 행을
+QuerydslPredicateExecutor가 제공하는 findAll 메소드를 이용하여 조건에 맞는 데이터들을 페이지 객체로 받아서
+화면에 출력합니다.
+
+즉 10004, 10005 <- 판매상태SELL 인 상품을 조회하는 결과를 얻을 수 있습니다.
+```
 
 
 
