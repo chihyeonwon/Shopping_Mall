@@ -44,6 +44,48 @@ spring boot devtools 의존성을 추가합니다.
 
 file-settings-build, execution, deployment - compiler 메뉴에서 build project automatically에 체크해줍니다.
 ```
+#### Live Reload 적용하기
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/7da3e77c-b47d-4aab-ab12-947655234e54)
+```
+application.properties 에 Live Reload 적용 설정을 추가합니다.
+```
+#### 크롬 확장 프로그램 추가
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/a9348746-8b60-4bc2-9515-71e5bc1af2e2)
+```
+LiveReload 확장 프로그램을 설치하고 모든 사이트에서 적용이 가능하도록 설정합니다.
+```
+#### Property Defaults 적용하기
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/5c5009b1-e8ca-43fe-a0c2-8de846ecdaf9)
+```
+pom.xml에 spring.thymeleaf.cache=faslse를 추가합니다 false는 개발환경에서 캐싱 기능을 꺼두는 방법으로
+true는 운영환경에서 캐싱 기능을 키는 방법으로 관리할 수 있습니다.
+```
+## Thymeleaf 예제
+#### th:text를 이용한 상품 데이터 출력용 Dto 클래스
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/580b03b0-529f-42bc-8eee-cceeca564680)
+```
+데이터를 주고 받을 때는 Entity 클래스 자체를 반환하면 안되고 데이터 전달용 객체 Dto를 생성해야 합니다.
+상품 데이터 출력용 Dto 클래스를 생성하였습니다.
+```
+#### th:text를 이용한 상품 데이터 출력용 컨트롤러 클래스
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/afb5b616-17c8-480c-966e-6458b19f70df)
+```
+앞서 생성한 ThymeleafExController안에 thymeleafExample02 메소드를 생성하고 ItemDto 객체를 생성한 후
+모델에 데이터를 담아서 뷰에 전달하였습니다.
+```
+#### th:text를 이용한 상품 데이터 출력용 thymeleaf 파일
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/e47d2634-aa8c-43ae-bebd-588b753aa149)
+```
+전달받은 itemDto 객체를 th:text를 이용하여 출력합니다.
+```
+#### ItemDto 객체를 이용한 화면 출력
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/855c8948-071c-49bc-9034-b33ae9c5831a)
+```
+ShopApplication을 실행한 후 url을 입력하면 입력한 데이터가 화면에 정상적으로 출력되는 것을 알 수 있습니다.
+```
+
+
+
 
 
 
