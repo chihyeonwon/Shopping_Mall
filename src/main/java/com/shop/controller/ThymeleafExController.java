@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping(value="/thymeleaf")
@@ -17,7 +19,7 @@ public class ThymeleafExController {
         return "thymeleafEx/thymeleafEx01";
     }*/
 
-    @GetMapping(value="/ex02")
+    /*@GetMapping(value="/ex02")
     public String thymeleafExample02(Model model){
         ItemDto itemDto = new ItemDto();
         itemDto.setItemDetail("상품 상세 설명");
@@ -27,5 +29,23 @@ public class ThymeleafExController {
 
         model.addAttribute("itemDto", itemDto); // 생성한 itemDto 객체 전달
         return "thymeleafEx/thymeleafEx02";
+    }*/
+
+    @GetMapping(value="/ex03")
+    public String thymeleafExample03(Model model){
+        List<ItemDto> itemDtoList = new ArrayList<>(); // ItemDto 객체들을 넣을 리스트 생성
+
+        for(int i=1; i<=10; i++){ // 10개의 itemDto 객체 생성
+            ItemDto itemDto = new ItemDto();
+            itemDto.setItemDetail("상품 상세 설명" + i);
+            itemDto.setItemNm("테스트 상품" + i);
+            itemDto.setPrice(1000 * i); // 1000~10000
+            itemDto.setRegTime(LocalDateTime.now());
+
+            itemDtoList.add(itemDto); // 리스트에 itemDto 객체들을 넣음
+        }
+
+        model.addAttribute("itemDtoList", itemDtoList);
+        return "thymeleafEx/thymeleafEx03";
     }
 }
