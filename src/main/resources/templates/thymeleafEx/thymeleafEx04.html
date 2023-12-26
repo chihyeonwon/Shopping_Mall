@@ -20,8 +20,10 @@
 
     <tbody>
     <tr th:each="itemDto, status:${itemDtoList}">
-        <td th:if="${status.even}" th:text="짝수"></td>
-        <td th:unless="${status.even}" th:text="홀수">    </td>
+        <td th:switch="${status.even}">
+            <span th:case=true th:text="짝수"></span>
+            <span th:case=false th:text="홀수"></span>
+        </td>
         <td th:text="${itemDto.itemNm}"></td>
         <td th:text="${itemDto.itemDetail}"></td>
         <td th:text="${itemDto.price}"></td>
