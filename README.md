@@ -95,7 +95,17 @@ ShopApplication을 실행한 후 url을 입력하면 입력한 데이터가 화�
 
 th:each를 사용하여 리스트에 있는 데이터를 객체에 하나씩 담은 후 객체의 데이터들을 테이블의 형태로 출력하였습니다.
 ```
+#### th:if, th:unless를 이용한 조건문 처리용 thymeleaf 파일
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/c5888411-5c24-4828-966f-3119bed6a3eb)
+#### th:if, th:unless를 이용한 조건문 처리 화면 출력
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/5352bff6-af38-464f-be2c-1c6aa9fcffd4)
+```
+th:if와 th:unless를 사용하여 앞선 예제에서 출력한 상품 리스트의 인  덱스가 짝수이면 "짝수" 텍스트를
+홀수이면 "홀수"텍스트를 출력하는 조건문을 살펴 보았습니다.
 
+th:if="조건" 조건이 true일 경우 실행할 문장, th:unless="조건" 조건이 false일 경우 실행할 문장
+조건문에 따라서 인덱스의 텍스트가 결정되는 것을 확인할 수 있습니다.
+```
 
 
 
