@@ -13,11 +13,11 @@ import java.util.List;
 @Controller
 @RequestMapping(value="/thymeleaf")
 public class ThymeleafExController {
-    /*@GetMapping(value="/ex01")
+    @GetMapping(value="/ex01")
     public String thymeleafExample01(Model model){
         model.addAttribute("data", "타임리프 예제입니다.");
         return "thymeleafEx/thymeleafEx01";
-    }*/
+    }
 
     /*@GetMapping(value="/ex02")
     public String thymeleafExample02(Model model){
@@ -49,7 +49,7 @@ public class ThymeleafExController {
         return "thymeleafEx/thymeleafEx03";
     }*/
 
-    @GetMapping(value="/ex04")
+    /*@GetMapping(value="/ex04")
     public String thymeleafExample04(Model model){
         List<ItemDto> itemDtoList = new ArrayList<>(); // ItemDto 객체들을 넣을 리스트 생성
 
@@ -65,5 +65,10 @@ public class ThymeleafExController {
 
         model.addAttribute("itemDtoList", itemDtoList);
         return "thymeleafEx/thymeleafEx04";
+    }*/
+
+    @GetMapping(value = "/ex05")
+    public String thymeleafExample05(){
+        return "thymeleafEx/thymeleafEx05";
     }
 }
