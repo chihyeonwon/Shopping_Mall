@@ -83,6 +83,18 @@ true는 운영환경에서 캐싱 기능을 키는 방법으로 관리할 수 �
 ```
 ShopApplication을 실행한 후 url을 입력하면 입력한 데이터가 화면에 정상적으로 출력되는 것을 알 수 있습니다.
 ```
+#### th:each를 이용한 상품 리스트 출력용 컨트롤러
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/8b5db734-b35b-4724-90d7-a8c679628a7c)
+#### th:each를 이용한 상품 리스트 출력용 thymeleaf 파일
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/add6c6a9-4891-47b5-bf64-ded90d2098a0)
+#### th:each를 이용한 상품 리스트 화면 출력
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/675ad58a-f442-4106-b943-c1d0eb95aa78)
+```
+상품 리스트 출력을 하기 위해 컨트롤러에서 itemDto 객체를 10개 생성하고 이 객체를 리스트에 넣은 후
+모델에 담아서 뷰로 전달합니다.
+
+th:each를 사용하여 리스트에 있는 데이터를 객체에 하나씩 담은 후 객체의 데이터들을 테이블의 형태로 출력하였습니다.
+```
 
 
 
