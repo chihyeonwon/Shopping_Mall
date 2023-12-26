@@ -1,5 +1,4 @@
-![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/a05b89bf-b810-4a0f-8930-d2ef2f022b14)## Thymeleaf
-
+## Thymeleaf
 ```
 화면을 동적으로 만들어주는 서버 사이드 템플릿 엔진인 Thymeleaf를 사용하여서 개발하였습니다.
 Thymeleaf의 확장명은 .html이며, 문법은 html 태그 안쪽에 속성으로 사용됩니다.
