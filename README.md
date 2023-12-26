@@ -112,7 +112,16 @@ th:if="조건" 조건이 true일 경우 실행할 문장, th:unless="조건" 조
 앞서 사용한 th:if, th:unless 대신 th:switch, th:case를 이용하여 인덱스가 짝수일 때 값이 true인 경우에는 짝수를
 false일 때는 홀수를 출력합니다. 출력결과는 동일합니다.
 ```
+#### th:href를 이용한 링크 처리용 thymeleaf 파일
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/68b0c226-b68e-4c1b-bba1-ad10b1522eed)
+#### th:href를 이용한 링크 처리용 화면 출력
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/f4f3137e-0364-438a-ac02-a25c734541e8)
+```
+th:href를 사용하여 기존에 작성했던 예제 1페이지와 thymeleaf 공식 사이트로 이동하는 하이퍼링크를 생성하였습니다.
 
+책에는 경로를 <a th:href="@{경로명}">으로 주었으나 문법이 바뀐 것으로 확인되어서 <a th:href="경로명">으로 하니
+정상적으로 작동합니다.
+```
 
 
 
