@@ -100,13 +100,18 @@ th:each를 사용하여 리스트에 있는 데이터를 객체에 하나씩 담
 #### th:if, th:unless를 이용한 조건문 처리 화면 출력
 ![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/5352bff6-af38-464f-be2c-1c6aa9fcffd4)
 ```
-th:if와 th:unless를 사용하여 앞선 예제에서 출력한 상품 리스트의 인  덱스가 짝수이면 "짝수" 텍스트를
+th:if와 th:unless를 사용하여 앞선 예제에서 출력한 상품 리스트의 인덱스가 짝수이면 "짝수" 텍스트를
 홀수이면 "홀수"텍스트를 출력하는 조건문을 살펴 보았습니다.
 
 th:if="조건" 조건이 true일 경우 실행할 문장, th:unless="조건" 조건이 false일 경우 실행할 문장
 조건문에 따라서 인덱스의 텍스트가 결정되는 것을 확인할 수 있습니다.
 ```
-
+#### th:switch, th:case를 이용한 조건문 처리용 thymeleaf 파일
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/b1e1c3ad-e602-405d-a592-356798a6b7c0)
+```
+앞서 사용한 th:if, th:unless 대신 th:switch, th:case를 이용하여 인덱스가 짝수일 때 값이 true인 경우에는 짝수를
+false일 때는 홀수를 출력합니다. 출력결과는 동일합니다.
+```
 
 
 
