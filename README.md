@@ -1,4 +1,4 @@
-## Thymeleaf
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/a05b89bf-b810-4a0f-8930-d2ef2f022b14)## Thymeleaf
 
 ```
 화면을 동적으로 만들어주는 서버 사이드 템플릿 엔진인 Thymeleaf를 사용하여서 개발하였습니다.
@@ -119,6 +119,19 @@ false일 때는 홀수를 출력합니다. 출력결과는 동일합니다.
 ```
 th:href를 사용하여 기존에 작성했던 예제 1페이지와 thymeleaf 공식 사이트로 이동하는 하이퍼링크를 생성하였습니다.
 ```
-
+#### th:href를 이용한 파라미터 데이터 전달용 thymeleaf 파일
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/36aa1f96-227d-41c4-b002-8e5c817ce7ab)
+#### th:href를 이용한 파라미터 데이터 전달용 컨트롤러
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/53031641-684c-404f-b6b2-8cc50e7668ba)
+#### th:href를 이용한 파라미터 데이터 전달용 전달받은 thymeleaf 파일
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/1ad17327-207d-4932-94e3-c74d859beb68)
+#### th:href를 이용한 파라미터 전달 화면 출력
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/ecafa15e-294b-4655-b684-105aaca2e16e)
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/194fca0d-1956-4e3d-955b-f98811f8a281)
+```
+ex05 thymeleaf파일에서 ex06으로 이동할 때 파라미터를 경로 끝에 키=값 구조로 입력합니다.
+ex06 thymeleaf파일은 ex05에서 전달한 파라미터를 받아서 화면에 출력합니다. url은 url?파라미터1 & 파라미터2의 형태입니다.
+url에서 공백은 %20입니다.(학부 수업때 들은 내용)
+```
 
 
