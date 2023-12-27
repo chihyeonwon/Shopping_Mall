@@ -42,7 +42,14 @@ localhost:8000/logout을 입력하면 로그아웃을 할 지 물어보는 화�
 ```
 각각의 멤버의 상태가 일반 유저 USER인지 관리자 ADMIN인지 역할을 구분하도록 Role enum 클래스를 작성하였습니다.
 ```
+#### MemberFormDto 생성
 ![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/56a8328f-dfe3-4f0e-82a7-a630a17daa2e)
 ```
 회원 가입 화면으로부터 넘어오는 가입정보를 담을 dto를 생성하였습니다.
+```
+#### Member 엔티티 생성
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/f8476e2a-0411-48aa-b11d-dc34afc1f746)
+```
+회원 정보를 저장하는 Member 엔티티를 생성하였습니다. 관리할 회원 정보는 이름, 이메일, 비밀번호, 주소, 역할 입니다.
+엔티티에 회원을 생성하는 메소드를 생성하여 관리합니다.
 ```
