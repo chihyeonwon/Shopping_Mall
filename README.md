@@ -166,8 +166,20 @@ BootStrap CDN(Contents Delivery Network)를 layout1.html(본문 레이아웃)의
 Bootstrap 공식 개발 문서에서 NavBar 코드를 header.html에 추가하였습니다.
 heder영역에 네비게이션 바가 추가된 것을 확인할 수 있습니다.
 ```
+#### 푸터영역 수정
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/13be32b6-1d50-4e14-aacc-37df1b1dfb9f)
+```
+footer 영역이 content 바로 밑에 나오는 것을 알 수 있습니다.
+```
 
-
+#### css 파일 적용
+[정적 자원(css)가 불러와지지 않을 때 해결방법](https://velog.io/@tkaltk123/%EB%B6%80%ED%8A%B8%EC%8A%A4%ED%8A%B8%EB%9E%A9-%EB%A6%AC%EC%86%8C%EC%8A%A4%EB%A5%BC-%EB%B6%88%EB%9F%AC%EC%98%A4%EC%A7%80-%EB%AA%BB%ED%95%98%EB%8A%94-%EB%AC%B8%EC%A0%9C)    
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/6005d7d8-a11b-42e8-ae79-6a874bc5b4b4)
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/9c9d1019-183c-4455-a298-6a94c50bbd6f)
+```
+footer 영역이 하단에 고정될 수 있도록 css파일을 수정하고 css와 layout1.html을 연결해줍니다.
+css파일은 static 폴더 아래에 css패키지를 만들고 그 밑에 layout1.css을 작성하였습니다.
+```
 
 
 
