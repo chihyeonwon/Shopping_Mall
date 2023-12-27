@@ -132,5 +132,29 @@ ex05 thymeleaf파일에서 ex06으로 이동할 때 파라미터를 경로 끝�
 ex06 thymeleaf파일은 ex05에서 전달한 파라미터를 받아서 화면에 출력합니다. url은 url?파라미터1 & 파라미터2의 형태입니다.
 url에서 공백은 %20입니다.(학부 수업때 들은 내용)
 ```
+#### Thymeleaf Layout Dialect 의존성 추가
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/a6be3b68-ed19-4370-85ef-50fb818f9c75)
+#### Thymeleaf 페이지 레이아웃 : 헤더 레이아웃
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/827eab7c-abeb-4998-8245-f19b8941ff57)
+#### Thymeleaf 페이지 레이아웃 : 푸터 레이아웃
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/b0eb9747-9f73-4a95-9d61-ffdab888bb00)
+#### Thymeleaf 페이지 레이아웃 : 본문 레이아웃
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/79edded6-e6aa-468c-b254-2cd91c78cefa)
+#### Thymeleaf 페이지 레이아웃용 thymeleaf 파일
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/ccbfa52b-15c7-4dbc-af6f-bfd3fe1e20b9)
+#### Thymeleaf 페이지 레이아웃 화면 출력
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/ea1c712d-4624-4f9e-9c31-c2a9cc8fd011)
+```
+thymeleafEx07.html 파일에는 header,footer영역을 지정하지 않았지만 작성한 내용이 layout1.html파일에는 포함되어 있습니다.
+```
+
+
+
+
+
+
+
+
+
 
 
