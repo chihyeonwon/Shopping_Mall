@@ -147,8 +147,25 @@ url에서 공백은 %20입니다.(학부 수업때 들은 내용)
 ```
 thymeleafEx07.html 파일에는 header,footer영역을 지정하지 않았지만 작성한 내용이 layout1.html파일에는 포함되어 있습니다.
 ```
-
-
+## 부트스트랩 BootStrap
+```
+보통 웹페이지 상단에는 웹 페이지를 이동할 수 있는 네비게이션 바가 있으며 하단 영역에는 해당 기업의 주소,
+전화번호, 이메일 등의 정보를 나타내는 footer 영역이 있습니다. 부트스트랩은 웹 페이지를 쉽게 만들 수 있게 도와주는
+HTML, CSS, JS의 프레임워크입니다.
+```
+#### Bootstrap CDN 추가하기 
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/9de8c175-32a7-4fb9-a020-9bb90dd897b9)
+```
+BootStrap CDN(Contents Delivery Network)를 layout1.html(본문 레이아웃)의 헤더(head)부분에 추가합니다.
+```
+#### 헤더영역에 Navbar 추가
+[Bootstrap 공식 문서](https://getbootstrap.com/docs/5.3/components/navbar/)     
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/d6ef6692-ec46-457a-9aaf-fad09ac23ee2)     
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/6ce8abd9-b1c0-4aca-9d82-bd3f7be32e23)    
+```
+Bootstrap 공식 개발 문서에서 NavBar 코드를 header.html에 추가하였습니다.
+heder영역에 네비게이션 바가 추가된 것을 확인할 수 있습니다.
+```
 
 
 
