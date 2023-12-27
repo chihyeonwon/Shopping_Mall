@@ -42,4 +42,7 @@ localhost:8000/logout을 입력하면 로그아웃을 할 지 물어보는 화�
 ```
 각각의 멤버의 상태가 일반 유저 USER인지 관리자 ADMIN인지 역할을 구분하도록 Role enum 클래스를 작성하였습니다.
 ```
-
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/56a8328f-dfe3-4f0e-82a7-a630a17daa2e)
+```
+회원 가입 화면으로부터 넘어오는 가입정보를 담을 dto를 생성하였습니다.
+```
