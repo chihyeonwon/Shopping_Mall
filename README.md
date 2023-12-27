@@ -14,7 +14,22 @@
 스프링 시큐리티 의존성을 Maven project에 추가하면 이제 모든 요청은 인증을 필요로 하게 됩니다.
 의존성을 추가하는 것만으로도 모든 요청에 인증을 요구한다는 점이 인상적입니다.
 ```
+#### SpringSecurity Default Login Page
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/f4d7f7d0-25b9-4c33-b1b8-25f97664601c)
+#### SpringSecurity user Password
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/cacc6d08-54bf-498f-811a-5b78ba3f244c)
+#### 잘못된 아이디, 패스워드를 입력했을 때
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/2820a136-c8f1-4ffd-80f0-e542d9a7a334)
+#### 로그아웃 기능
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/60cd38c4-1a33-40fa-94a0-2c340876e384)
+```
+의존성을 추가하는 것만으로도 기존 url에 접속했을 때 시큐리티에서 제공하는 로그인 페이지로 이동하게 됩니다.
+스프링 시큐리티에서 기본적으로 제공하는 아이디는 user이고 비밀번호는 애플리케이션을 실행할 때마다 변경되는
+비밀번호를 콘솔창에 출력해서 보여줍니다.
 
+localhost:8000/logout을 입력하면 로그아웃을 할 지 물어보는 화면이 나타납니다.
+로그아웃 후 서버에 다시 요청을 하면 다시 인증을 요구합니다.
+```
 
 
 
