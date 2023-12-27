@@ -30,6 +30,11 @@
 localhost:8000/logout을 입력하면 로그아웃을 할 지 물어보는 화면이 나타납니다.
 로그아웃 후 서버에 다시 요청을 하면 다시 인증을 요구합니다.
 ```
-
+#### SecurityConfig 클래스 작성
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/ea6c23b8-72f5-4a01-967c-aaab57fc7c56)
+```
+현재는 모든 요청에 인증을 필요로 하지만  Configure 메소드에 설정을 추가하지 않으면 더 이상 요청에 인증을 요구하지 않습니다.
+해당 파일을 사용하여 요청에 인증 요구 설정을 할 수 있습니다.
+```
 
 
