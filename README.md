@@ -53,3 +53,28 @@ localhost:8000/logout을 입력하면 로그아웃을 할 지 물어보는 화�
 회원 정보를 저장하는 Member 엔티티를 생성하였습니다. 관리할 회원 정보는 이름, 이메일, 비밀번호, 주소, 역할 입니다.
 엔티티에 회원을 생성하는 메소드를 생성하여 관리합니다.
 ```
+#### MemberService
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/960229d7-d375-4275-ad7c-c716c4c422df)
+```
+멤버 데이터베이스에 회원을 저장하는 서비스 계층 클래스인 MemberService를 작성합니다.
+```
+#### MemberServiceTest
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/a2476cd7-1202-43d8-a2f3-59831daa7a08)
+```
+회원가입 기능이 정상적으로 동작하는 지 테스트 코드를 작성하였습니다.
+저장하려고 요청했던 값과 실제 저장된 데이터를 비교합니다.
+```
+#### 회원가입 기능 테스트 결과
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/626b2d9e-52fe-4a09-990d-3cbfd8efd808)
+```
+회원가입이 정상적으로 이루어진 것을 확인할 수 있습니다.
+```
+
+
+
+
+
+
+
+
+
