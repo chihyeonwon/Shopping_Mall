@@ -1,4 +1,4 @@
-## SpringSecurity
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/366dd165-557f-4c9d-9e0d-e6403a7230f4)![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/3f4d620f-9c91-4357-bf3b-ffc63f1e4460)## SpringSecurity
 ```
 스프링 시큐리티는 스프링 기반의 애플리케이션을 위한 보안 솔루션을 제공합니다.
 
@@ -79,7 +79,19 @@ localhost:8000/logout을 입력하면 로그아웃을 할 지 물어보는 화�
 
 테스트 결과 중복 회원가입 테스트를 통과하는 것을 알 수 있습니다.
 ```
+#### 회원 가입 Controller
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/21c1af46-2690-4bb7-88ef-ea85c01449b9)
+```
+회원 가입을 위한 페이지와 연결한 컨트롤러를 작성합니다.
+```
+#### 회원 가입 페이지 폼
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/fe924abe-3950-478e-b4b8-eb37844f2ef9)
+```
+회원가입 페이지도 부트스트랩을 사용하여 만들었습니다.
+홈페이지의 예제 Forms에 나와있는 코드를 변형해서 사용하였습니다.
 
+회원 정보인 이름, 이메일, 비밀번호, 주소를 입력하는 폼을 생성하고 post방식으로 입력된 데이터를 url로 전달합니다.
+```
 
 
 
