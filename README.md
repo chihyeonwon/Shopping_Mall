@@ -1,4 +1,4 @@
-![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/366dd165-557f-4c9d-9e0d-e6403a7230f4)![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/3f4d620f-9c91-4357-bf3b-ffc63f1e4460)## SpringSecurity
+## SpringSecurity
 ```
 스프링 시큐리티는 스프링 기반의 애플리케이션을 위한 보안 솔루션을 제공합니다.
 
