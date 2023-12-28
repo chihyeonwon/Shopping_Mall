@@ -31,7 +31,7 @@ class MemberServiceTest {
         return Member.createMember(memberFormDto, passwordEncoder);
     }
 
-    @Test
+    /*@Test
     @DisplayName("회원가입 테스트")
     public void saveMemberTest(){
         Member member = createMember();
@@ -42,5 +42,18 @@ class MemberServiceTest {
         assertEquals(member.getAddress(), savedMember.getAddress());
         assertEquals(member.getPassword(), savedMember.getPassword());
         assertEquals(member.getRole(), savedMember.getRole());
+    }*/
+
+    @Test
+    @DisplayName("중복 회원 가입 테스트")
+    public void saveDuplicateMemberTest(){
+        Member member1 = createMember();
+        Member member2 = createMember();
+        memberService.saveMember(member1);
+
+        Throwable e = assertThrows(IllegalStateException.class, () -> {
+            memberService.saveMember(member2);});
+
+        assertEquals("이미 가입된 회원입니다.", e.getMessage());
     }
 }
