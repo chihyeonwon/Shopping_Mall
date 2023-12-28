@@ -99,7 +99,26 @@ localhost:8000/logout을 입력하면 로그아웃을 할 지 물어보는 화�
 이때 @PostMapping 어노테이션을 들고 있는 컨트롤러의 memberForm 메소드에서 폼에서 생성된 memberFormDto 객체의 정보들로
 회원을 생성하고 저장하게 됩니다. 저장이 끝난 후에는 루트 경로에 해당하는 main 화면으로 리다이렉팅합니다.
 ```
+#### 메인 페이지 컨트롤러
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/177231f6-135f-4747-8374-66bdc643b381)
+```
+회원가입 후 메인 페이지로 이동할 수 있도록 컨트롤러를 작성합니다.
+```
+#### 메인 페이지 코드
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/03974bce-ac82-4356-ae72-e8286e18b92e)
+```
+회원 가입 후 보여지는 메인 페이지 코드입니다. 추후 등록된 상품의 목록을 보여주도록 수정합니다.
+```
+#### 회원 가입 페이지
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/0b64f5be-ddd5-4e47-940e-a9f32f729d1c)
+#### 메인 페이지
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/92130781-48c8-4448-ac87-18f00c9cc88a)
+```
+localhost:8000/members/new URL를 입력하면 나오는 회원 가입 페이지입니다. 회원 가입 등록을 위해 정보를 입력하고
+Submit 버튼을 누르면 회원가입이 되면서 메인 페이지로 화면이 이동합니다.
 
+하지만 지금은 이름이나 비밀번호를 입력하지 않아도 정상적으로 저장됩니다.
+```
 
 
 
