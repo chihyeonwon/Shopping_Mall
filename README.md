@@ -42,7 +42,39 @@ localhost:8000/logout을 입력하면 로그아웃을 할 지 물어보는 화�
 ```
 각각의 멤버의 상태가 일반 유저 USER인지 관리자 ADMIN인지 역할을 구분하도록 Role enum 클래스를 작성하였습니다.
 ```
+#### MemberFormDto 생성
 ![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/56a8328f-dfe3-4f0e-82a7-a630a17daa2e)
 ```
 회원 가입 화면으로부터 넘어오는 가입정보를 담을 dto를 생성하였습니다.
 ```
+#### Member 엔티티 생성
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/f8476e2a-0411-48aa-b11d-dc34afc1f746)
+```
+회원 정보를 저장하는 Member 엔티티를 생성하였습니다. 관리할 회원 정보는 이름, 이메일, 비밀번호, 주소, 역할 입니다.
+엔티티에 회원을 생성하는 메소드를 생성하여 관리합니다.
+```
+#### MemberService
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/960229d7-d375-4275-ad7c-c716c4c422df)
+```
+멤버 데이터베이스에 회원을 저장하는 서비스 계층 클래스인 MemberService를 작성합니다.
+```
+#### MemberServiceTest
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/a2476cd7-1202-43d8-a2f3-59831daa7a08)
+```
+회원가입 기능이 정상적으로 동작하는 지 테스트 코드를 작성하였습니다.
+저장하려고 요청했던 값과 실제 저장된 데이터를 비교합니다.
+```
+#### 회원가입 기능 테스트 결과
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/626b2d9e-52fe-4a09-990d-3cbfd8efd808)
+```
+회원가입이 정상적으로 이루어진 것을 확인할 수 있습니다.
+```
+
+
+
+
+
+
+
+
+
