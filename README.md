@@ -92,7 +92,13 @@ localhost:8000/logout을 입력하면 로그아웃을 할 지 물어보는 화�
 
 회원 정보인 이름, 이메일, 비밀번호, 주소를 입력하는 폼을 생성하고 post방식으로 입력된 데이터를 url로 전달합니다.
 ```
-
+#### 회원 가입 Controller 수정
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/7e869712-b00c-450f-a0fd-3b2836ab0265)
+```
+회원 가입 페이지에서 회원 정보를 입력한 후 Submit 버튼을 누르면 post방식으로 /members/new Url에 요청을 하게 되는데
+이때 @PostMapping 어노테이션을 들고 있는 컨트롤러의 memberForm 메소드에서 폼에서 생성된 memberFormDto 객체의 정보들로
+회원을 생성하고 저장하게 됩니다. 저장이 끝난 후에는 루트 경로에 해당하는 main 화면으로 리다이렉팅합니다.
+```
 
 
 
