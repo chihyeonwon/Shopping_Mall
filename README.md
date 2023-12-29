@@ -144,4 +144,12 @@ Submit 버튼을 누르면 회원가입이 되면서 메인 페이지로 화면�
 실제로 MySQL 데이터베이스의 member 테이블에 입력한 회원 정보 데이터(id, 이메일, 암호화된 비밀번호, 주소)가 입력되는 지
 확인해보았습니다.
 ```
-
+## 로그인 로그아웃 기능 구현
+#### MemberService 수정
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/923268cb-b032-4f25-bfcb-68ad79c2d596)
+```
+스프링 시큐리티에서 UserDetailsService 클래스를 통해서 로그인 기능을 구현할 수 있습니다.
+기존 MemberService 클래스에서 UserDetailsSevice를 구현합니다.
+UserDetailsService의 loadUserByUsername 메소드를 오버라이딩하고 memberRepository의 member를 찾아서
+member의 정보들로 User 객체를 생성(User.builder.build())합니다.
+```
