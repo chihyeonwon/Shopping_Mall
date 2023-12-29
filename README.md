@@ -153,3 +153,27 @@ Submit 버튼을 누르면 회원가입이 되면서 메인 페이지로 화면�
 UserDetailsService의 loadUserByUsername 메소드를 오버라이딩하고 memberRepository의 member를 찾아서
 member의 정보들로 User 객체를 생성(User.builder.build())합니다.
 ```
+#### SecurityConfig 수정
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/976ffb35-6d9e-4a00-a1b8-e71bbbd7d234)
+```
+http의 .formLogin 메서드와 .logout() 메서드를 사용해서 로그인 시 페이지 설정, 로그아웃 시 페이지 설정 등을 진행합니다.
+```
+#### 로그인 페이지 작성
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/5b73c5a6-2057-4f9d-8c0e-6c4763482b2e)
+```
+memberLoginForm 로그인 폼 페이지를 작성합니다. 이메일주소와 비밀번호를 입력할 수 있는 입력창과 로그인, 회원가입 버튼으로
+구성하였습니다.
+```
+#### MemberController 수정
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/2e392b14-1bd8-41cd-a518-be3008ab87f4)
+```
+로그인 페이지로 이동할 수 있도록 컨트롤러를 수정하였습니다.
+로그인 실패 시에는 /login/error 페이지에서 오류메시지를 담아서 다시 로그인 페이지로 이동하도록 합니다.
+```
+#### 로그인 화면
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/ec5a7811-2574-401d-8b30-81444c9c4f28)
+#### 로그인 실패
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/985518f4-b063-4daa-bc6f-49ea677c183d)
+#### 로그인 성공
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/7de76bc3-fb53-4a28-b417-7e3a7739be67)
+
