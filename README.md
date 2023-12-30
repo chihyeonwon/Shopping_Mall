@@ -199,3 +199,39 @@ sec:authorize="hasAnyAuthority", "isAuthenticated", "isAnonymous" 등 인증이 
 로그인을 하면 "로그아웃" 메뉴가 나타나고 로그아웃을 하면 "로그인" 메뉴가 나타납니다.
 인증 상태에 따라서 메뉴를 다르게 보여줍니다.
 ```
+## 페이지 권한 설정하기
+#### itemForm
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/96741ac9-c802-4b5b-a9da-35a5056afb8d)
+```
+관리자 ADMIN 계정만 접근할 수 있는 상품 등록 페이지를 생성합니다.
+```
+#### ItemController
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/34c1a900-01e4-46c8-b816-8aaaf0dd2802)
+```
+상품 등록 페이지로 접근할 수 있도록 컨트롤러를 작성합니다.
+```
+#### CustomAuthenticationEntryPoint
+
+```
+ajax의 경우 http request header에 XMLHttpRequest라는 값이 세팅되어 요청이 오는데, 인증되지 않은 사용자가 ajax로
+리소스를 요청할 경우 "Unauthorized"에러를 발생시키고 나머지 경우는 로그인 페이지로 리다이렉팅합니다.
+```
+#### SecurityConfig 수정
+
+```
+http.authorizeRequest() 메서드를 이용하여 페이지 접근 권한을 설정합니다.
+http.exceptionHandling.authenticationEntryPoint에는 앞서 생성한 CustomAuthenticationEntryPoint를 넣어서
+인증되지 않은 사용자가 리소스에 접근했을 때의 핸들러를 추가합니다.
+```
+#### USER ROLE 회원 ADMIN 페이지 접근 실패
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/0beea1de-d671-4177-a6ce-2193a2af3a44)
+```
+현재 회원가입할 때 사용자를 USER 권한으로 생성하기 때문에 ADMIN 경로로 접근하려고 하면 403 Forbidden 에러가 나타납니다.
+
+관리자 회원의 경우 관리자를 위한 회원가입 페이지가 따로 있어야 하지만 이번 프로젝트에서는 회원가입할 때 사용자를
+ADMIN 권한으로 생성 후에 관리자 페이지에 접근이 가능한 지만 확인합니다.
+```
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/55c5afa4-2ea6-4007-accd-8162f495e0f7)
+```
+또한 현재 사용자의 ROLE이 USER이므로 상품 등록, 상품 관리 메뉴가 나타나지 않습니다.
+```
