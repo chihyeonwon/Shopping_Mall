@@ -39,7 +39,7 @@ public class Member {
 
         String password = passwordEncoder.encode(memberFormDto.getPassword());
         member.setPassword(password);
-        member.setRole(Role.USER);
+        member.setRole(Role.ADMIN); // 계정 생성 시 권한을 Admin으로 고정
 
         return member;
     }
