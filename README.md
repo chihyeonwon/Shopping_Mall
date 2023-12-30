@@ -235,3 +235,14 @@ ADMIN 권한으로 생성 후에 관리자 페이지에 접근이 가능한 지�
 ```
 또한 현재 사용자의 ROLE이 USER이므로 상품 등록, 상품 관리 메뉴가 나타나지 않습니다.
 ```
+#### 회원 가입 시 Admin Role로 고정
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/6e86bc98-a31a-4864-9b9a-3e4999512409)      
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/9891ea5f-95ca-4b98-a223-4d5cd08b215d)     
+```
+Member 엔티티에서 회원을 생성하는 memberCreate 메소드에서 역할은 USER에서 ADMIN 으로 수정합니다.
+회원을 생성할 때 ADMIN 권한을 가지게 되므로 /admin/item/new 경로로 접속했을 때 상품 등록 페이지에 접속할 수 있습니다.
+
+또한 상단 바의 메뉴를 보면 상품 등록, 관리와 같이 Admin 계정에게만 나타나는 메뉴를 볼 수 있습니다.
+
+이후 프로젝트의 개발은 Admin 권한을 획득하고 개발을 진행합니다.
+```
