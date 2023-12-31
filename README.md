@@ -22,3 +22,16 @@
 
 스프링은 객체 엔티티이므로 단방향, 양방향, 즉 방향성을 이해해야할 필요성이 있다.
 ```
+## 일대일 단방향 매핑
+#### 장바구니 엔티티 설계
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/03193c54-cbef-4e3c-a723-0e3575c50175)    
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/1e973504-5c38-460b-b7c2-4ffb2abde148)     
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/ca707da3-ec3a-454a-9903-ddb2ec2ebf7e)
+```
+@OneToOne 어노테이션을 이용하여 member 엔티티와 일대일로 매핑합니다.
+cart 테이블이 생성되고 member_id 속성을 외래키로 갖습니다.
+
+cart 엔티티를 조회할 때 매핑된 member 엔티티도 한 번에 조회하는 데 이를 즉시로딩이라고 합니다.
+일대일, 다대일에서 기본적으로 fetch 전략으로 설정하는데 따로 옵션을 주지 않으면
+즉시로딩 @OneToOne(fetch = FetchType.EAGER)로 설정하는 것과 같습니다.
+```
