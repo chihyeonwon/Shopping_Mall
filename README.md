@@ -38,7 +38,8 @@ cart 엔티티를 조회할 때 매핑된 member 엔티티도 한 번에 조회�
 ## 다대일 단방향 매핑
 #### 장바구니 아이템 엔티티 설계
 ![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/e504003b-1cb0-45b6-8ef8-e37910a92529)
-
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/4a6cff3b-573d-4a92-a4f8-20ba8ad43d40)     
+![image](https://github.com/mr-won/Shopping_Mall/assets/5806858/1c211724-758e-4a25-b7a0-84e6a44a5046)     
 ```
 @ManyToOne 어노테이션을 이용하여 cart 장바구니 엔티티와 item 상품정보 엔티티와 다대일 매핑합니다.
 
