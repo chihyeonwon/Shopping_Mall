@@ -118,6 +118,46 @@ order 엔티티가 데이터베이스에 저장(save->insert)되고 그 후 영�
 order 주문이 orderItem 3개를 담았으므로 3개가 조회되는지 테스트 assertEqulas(3, ~)를 정상적으로 통과합니다.
 ```
 ## 고아 객체 제거
+```
+부모 엔티티와 연관 관계가 끊어진 자식 엔티티를 고아 객체라고 합니다.
+영속성 전이 기능과 같이 사용하면 부모 엔티티를 통해서 자식의 생명 주기를 관리할 수 있습니다.
+고아 객체 기능은 참조하는 곳이 하나일 때만 사용해야 합니다.
+```
+#### Order의 @OneToMany orphanRemoval 옵션 추가
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/60e0c99b-6686-4e22-b3f5-56fd47d85a19)
+```
+고아 객체 제거를 사용하기 위해서 주문엔티티(부모)에서 주문아이템(자식)를 삭제했을 때 orderItem 엔티티가 삭제되는 지 테스트 하였습니다. @OneToMany에 orphanRemoval 옵션을 true로 지정하였습니다.
+```
+#### OrderTest 고아 객체 제거 테스트
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/872ec615-afdd-4896-8c1e-9702f294b84f)
+```
+주문 데이터를 생성해서 저장하고 order 엔티티에서 관리하고 있는 orderItem 리스트의 0번째 인덱스 요소를 제거합니다. 부모 엔티티와 연관 관계가 끊어졌기 때문에 고아 객체를 삭제하는 쿼리문이 실행됩니다.
+```
+#### 고아 객체 제거 테스트 결과
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/80f5de0d-f3d9-42bd-be33-a399f6ac11f7)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## 지연 로딩
 
