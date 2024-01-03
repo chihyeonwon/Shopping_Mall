@@ -136,30 +136,66 @@ order 주문이 orderItem 3개를 담았으므로 3개가 조회되는지 테스
 #### 고아 객체 제거 테스트 결과
 ![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/80f5de0d-f3d9-42bd-be33-a399f6ac11f7)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## 지연 로딩
+```
+엔티티를 조회할 때 연관된 엔티티를 함께 조회하는 즉시 로딩을 먼저 알아보겠습니다.
+```
+#### OrderItemRepository
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/cd90e5b7-0e7e-415d-9419-c5fad65590c7)
+```
+주문 상품 데이터를 저장할 Repository를 생성해줍니다.
+```
+#### OrderTest 수정
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/067907d0-8ad5-4726-aaeb-fe83e434391b)
+```
+기존에 생성되어 있던 주문생성메소드를 이용하여 주문을 생성하고 order 엔티티에 저장한 orderItem을
+조회합니다.
+```
+#### OrderItem 즉시 로딩 조회 결과
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/2c2e8fa5-98e6-4c6c-aaf3-1ea76311dd76)
+```
+orderItem 엔티티 하나를 조회했을 뿐인데 order_item 테이블과 item,orders,member 테이블을 조인해서 한꺼번에 가져오는 것을 알 수 있습니다.
+작성하고 있는 비즈니스 로직에서 사용하지 않을 데이터도 가져오는 것은 개발자가 쿼리가 어떻게 실행될지 예측할 수 없게 하며
+사용하지 않는 데이터도 한꺼번에 조회하므로 성능 문제도 있을 수 있습니다.
+ 따라서 즉시 로딩은 실무에서는 사용하기 힘듭니다.
+```
+#### OrderItem FetchType.Lazy
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/50653786-e6af-4cb6-8ddd-2230ed3aaa9a)
+```
+일대일, 다대일(@OneToOne, @ManyToOne)은 매핑 기본 전략으로 FetchType.EAGER 즉시 로딩 전략을 사용합니다.
+즉시 로딩을 사용하는 대신에 지연 로딩 방식을 사용합니다. OrderItem에서 FetchType.Lazy 방식으로 설정합니다.
+```
+#### OrderItem 지연로딩 조회 결과
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/a707ba86-211b-4772-b481-0ac3fb63cc5e)
+```
+orderItem 엔티티만 조회하는 쿼리문이 실행되는 것을 알 수 있습니다.
+Order클래스 조회 결과 HibernateProxy 객체가 들어가있는 것을 알 수 있는데 이 프록시 객체는 실제로 사용되기 전까지
+데이터 로딩을 하지 않고, 실제 사용 시점에 조회 쿼리문이 실행됩니다.
+```
+#### 모든 엔티티 매핑 전략에 지연로딩 설정
+#### Cart Entity fetch Lazy
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/7f91bf3a-1984-43a6-bff1-1cbf0d6f70a7)
+#### CartItem Entity fetch Lazy
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/d8716ed0-b8f6-47f8-b612-c4cfcc978e70)
+#### Order Entity fetch Lazy
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/718628df-965f-42c9-b48f-f9203bf0c4e2)
+```
+일대일, 다대일 어노테이션의 기본 전략은 EAGER 즉시로딩이지만 일대다 어노테이션의 기본전략은 LAZY 지연로딩입니다.
+하지만 전략을 설정하지 않았을 때 어떤 어노테이션이 즉시로딩인지 지연로딩인지 구분되지 않기 때문에 모든 매핑되는 엔티티의
+전략에 지연로딩을 명시해줍니다.
+```
 
 ## Auditing을 이용한 엔티티 공통 속성 공통화
+
+
+
+
+
+
+
+
+
+
+
+
 
