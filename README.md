@@ -186,11 +186,63 @@ Order클래스 조회 결과 HibernateProxy 객체가 들어가있는 것을 알
 ```
 
 ## Auditing을 이용한 엔티티 공통 속성 공통화
+```
+Spring Data Jpa에서는 Auditing 기능을 제공하여 엔티티가 저장 또는 수정될 때 자동으로 등록일, 수정일, 등록자, 수정자를
+입력해줍니다. 이런 공통 멤버 변수들을 추상 클래스로 만들고 해당 클래스를 상속받는 형태로 엔티티를 리팩토링합니다.
+```
+#### Auditing Class Diagram
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/3227e147-1666-4649-b4e7-0dff4ad6d726)
+#### AuditorAwareImpl
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/b4e04d60-2f24-4e92-9030-5bb412844d72)
+```
+현재 로그인한 사용자의 정보를 등록자와 수정자로 지정하기 위해서 AuditorAware 인터페이스를 구현한 클래스를 생성합니다.
+```
+#### AuditConfig
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/1254b74e-d0c6-43c6-883d-9eca63120452)
+```
+Auditing 기능을 사용하기 위해서 Config 파일을 생성합니다.
+```
+#### BaseTimeEntity
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/3fc4fd2a-650d-4a4c-9cb8-16558c447a06)
+```
+등록자, 수정자를 넣지 않고 등록일, 수정일만 넣는 테이블을 위한 BaseTimeEntity 추상 클래스를 생성합니다.
+```
+#### BaseEntity
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/8a0d3e04-32d7-4876-bda5-2a51f63d6eae)
+```
+BaseTimeEntity를 상속받고 등록자, 수정자를 추가한 BaseEntity 추상 클래스를 생성합니다.
+```
+#### Member 수정
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/14b933a1-40a2-449a-bbc6-b9878c0cd3c6)
+```
+Member 엔티티에 Auditing 기능을 적용하기 위해서 BaseEntity 클래스를 상속하도록 코드를 수정합니다.
+```
+#### MemberTest
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/3ee30907-07a4-4ff7-ad98-fcb952b1178d)
+```
+회원 엔티티 저장 시 자동으로 등록자, 수정자, 등록시간, 수정시간이 저장되는지 테스트를 진행합니다.
+```
+#### MemberTest Audting 테스트 실행 결과
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/4563becf-509d-4aba-9e4d-856e4f529a2d)
+```
+member 엔티티를 저장할 때 등록자나 등록일 등을 지정해주지 않았지만
+저장 시간과 현재 로그인한 계정의 이름으로 저장되는 것을 확인할 수 있습니다.
 
+org.springframework.security의 spring-security-test 의존성을 추가하여 스프링 시큐리티에서 제공하는
+가짜 로그인 객체를 생성해주는 @WithMockUser를 사용하여 gildong 유저를 생성한 후 테스트 하였습니다.
+```
+#### 공통 변수가 있는 모든 엔티티가 BaseEntity를 상속하도록 설정
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/bbb3e640-9722-45ca-8776-e8d19516f956)
+#### 공통 변수 삭제
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/14bac198-c74a-406b-b1a7-e2a47a73258b)
+#### BaseEntity 상속
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/60b55b11-a508-4f39-9b63-c595fcf773ac)
+```
+등록일(regTime), 수정일(updateTime) 변수가 공통적으로 있는 OrderItem, Cart, CartItem, Item, Order 엔티티를 수정합니다.
+기존에 있던 regTime, updateTime 변수를 삭제하고 BaseEntity를 상속받도록 코드를 수정하였습니다.
 
-
-
-
++ 모든 엔티티가 BaseEntity를 상속하도록 수정하였습니다.
+```
 
 
 
