@@ -93,6 +93,55 @@ ItemFormDto를 model 객체에 담아서 뷰로 전달하도록 합니다.
 
 상품 상세 이미지 중 대표 이미지등을 관리할 수 있습니다.
 ```
+#### application.properties 설정 추가하기
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/d8fa9d12-708a-4d71-9a64-91e60a6ce4fe)
+```
+상품 이미지 경로와 리소스 업로드 경로 프로퍼티를 추가합니다.
+```
+#### WebMvcConfig 
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/4175f411-354e-4392-964a-1b10fb20ee64)
+```
+WebMvcConfigurer 인터페이스를 구현한 WebMvcConfig 파일을 작성합니다.
+addResourceHandlers 메소드를 통해서 자신의 로컬 컴퓨터에 업로드한 파일을 찾을 위치를 설정합니다.
+```
+#### FileService
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/0f3fd38e-6092-45b4-8e0c-3d75055feb0f)
+```
+파일을 처리하는 FileService 클래스를 작성합니다.
+파일을 업로드하는 메소드와 삭제하는 메소드를 작성하였습니다.
+
+파일을 업로드하는 메소드에서는 서로 다른 객체에 이름을 부여하는 uuid와 확장자를 합쳐서 새로운 파일이름을 만들고
+그 파일이름으로 파일경로를 생성한 후 생성자로 넘겨줘서 파일 출력 스트림을 생성합니다.
+
+파일을 삭제하는 메소드에서는 파일이 저장된 경로를 이용하여 파일 객체를 생성한 후 객체의 존재여부에 따라 삭제를 합니다.
+```
+#### ItemImgRepository
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/f0df238f-4df7-4492-981d-2997490a6f3f)
+```
+상품 이미지 정보를 저장하는 ItemImgRepository 인터페이스를 작성합니다.
+```
+#### ItemImgService
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/ab403154-6050-4528-9765-aa7664a510eb)
+```
+상품 이미지를 업로드하고, 상품 이미지 정보를 저장하는 ItemImgService 클래스를 작성합니다.
+```
+#### ItemService
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/aee818fb-10a4-4e96-aa95-c6ecabb44336)
+```
+상품을 등록하는 ItemService 클래스를 작성합니다.
+
+상품 등록 폼으로부터 입력 받은 데이터로 item 객체를 생성합니다.
+상품 데이터를 저장한 후 첫 번째 이미지일 경우 상품 이미지 여부 값을 Y로하고 나머지는 N으로 합니다.
+상품의 이미지 정보를 저장합니다.
+```
+#### ItemController
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/8de8d890-02fd-4ff0-908c-a44a4dd5800b)
+```
+상품을 등록하는 url을 ItemController 클래스에 추가합니다.
+
+상품 등록시 필수값(첫 번째 상품이미지)가 없다면 다시 상품 등록 페이지로 전환합니다.
+상품 저장 로직을 호출합니다. 상품이 정상적으로 등록되었다면 메인 페이지로 이동합니다.
+```
 
 ## 상품 수정하기
 
