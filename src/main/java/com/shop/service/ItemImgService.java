@@ -36,4 +36,5 @@ public class ItemImgService {
         itemImg.updateItemImg(oriImgName, imgName, imgUrl);
         itemImgRepository.save(itemImg);
     }
+
 }
