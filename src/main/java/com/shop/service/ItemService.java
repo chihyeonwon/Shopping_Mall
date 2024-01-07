@@ -62,5 +62,19 @@ public class ItemService {
         itemFormDto.setItemImgDtoList(itemImgDtoList);
         return itemFormDto;
     }
+    public Long updateItem(ItemFormDto itemFormDto, List<MultipartFile> itemImgFileList) throws Exception{
+        //상품 수정
+        Item item = itemRepository.findById(itemFormDto.getId())
+                .orElseThrow(EntityNotFoundException::new);
+        item.updateItem(itemFormDto);
+        List<Long> itemImgIds = itemFormDto.getItemImgIds();
 
+        //이미지 등록
+        for(int i=0;i<itemImgFileList.size();i++){
+            itemImgService.updateItemImg(itemImgIds.get(i),
+                    itemImgFileList.get(i));
+        }
+
+        return item.getId();
+    }
 }
