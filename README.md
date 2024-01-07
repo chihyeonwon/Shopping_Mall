@@ -191,6 +191,37 @@ http://localhost:8000/admin/item/상품아이디를 입력해보겠습니다.
 Item 상품 엔티티에 상품을 업데이트하는 로직을 구현합니다.
 엔티티 클래스에 비즈니스 로직을 추가하여 객체지향적(코드 재활용 목적)으로 코딩할 수 있습니다.
 ```
+#### ItemService
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/b940262a-14ed-4aa9-8921-1de6c6ec3226)
+```
+상품을 업데이트할 때도 변경감지 기능을 사용합니다.
+상품등록할 때 전달받은 상품아이디로 상품엔티티를 조회한 후 상품 등록화면에서 입력받은 데이터로 상품 엔티티를 업데이트합니다.
+상품이미지 아이디를 조회하고 상품이미지를 업데이트합니다.(변경감지기능 updateItemImg)
+```
+#### ItemController
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/3564cc91-5afe-4235-a932-8fc0664f1509)
+```
+상품을 수정하는 url을 itemController 클래스에 추가합니다. 상품을 등록할 때 추가했던 코드와 비슷합니다.
+```
+#### 상품 수정 테스트
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/9f6e1061-0e04-4917-a48b-0820f08f0904)
+```
+새로운 테스트 상품을 등록합니다.
+```
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/286cdc92-7e71-43b5-93be-c10fe2e681ab)
+```
+새로운 테스트 상품의 상품아이디를 확인하고 item_id = 352입니다. http://localhost:8000/admin/item/352 경로로 접속합니다.
+```
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/0a71d902-d9dc-40fb-a02a-a7883af62f43)
+```
+해당 상품의 수정 페이지로 이동하게 되고 판매 상태를 품절, 가격을 20000, 재고를 200, 상품 상세 내용을 상품 수정 테스트,
+상품의 이미지를 청바지에서 스웨터로 수정해보겠습니다.
+```
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/d9ed4c25-8932-4459-a73f-1a1d87ce40c1)
+```
+기존에 올린 이미지 파일은 삭제되고 신규로 업로드한 이미지가 스웨터로 변경되고 메인화면으로 이동된 것으로 보아
+상품 수정이 정상적으로 이루어진 것을 확인할 수 있습니다.
+```
 ## 상품 관리하기
 
 ## 메인 화면
