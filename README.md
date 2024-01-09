@@ -237,10 +237,93 @@ maven compile을 실행하여 지금까지 작성한 엔티티 클래스들의 Q
 ```
 상품 데이터 조회 시 상품 조회 조건을 가지고 있는 ItemSearchDto 클래스를 생성합니다.
 ```
+#### Querydsl + Spring Data Jpa
+```
+Querydsl을 Spring Data Jpa와 함께 사용하기 위해서는 3단계의 과정으로 사용자 정의 리포지토리를 정의해야 합니다.
+1. 사용자 정의 인터페이스 작성
+2. 사용자 정의 인터페이스 구현
+3. Spring Data Jpa 리포지토리에서 사용자 정의 인터페이스 상속
+```
+#### ItemRepositoryCustom
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/dd172dc1-f3fc-4077-9c46-4a032d6c3fd6)  
+```
+사용자 정의 인터페이스를 작성합니다.
+Page<Item> 객체를 반환하는 getAdminItemPage 메소드를 작성합니다.
+파라미터로 상품 조회 조건을 가지고 있는 itemSearchDto 객체와 페이징 정보를 담고 있는 pageable 객체를 받습니다.
+```
+#### ItemRepositoryCustomImpl
+```
+ItemRepositoryCustom 인터페이스를 구현하는 ItemRepositoryCustomImpl 클래스를 작성합니다.
+BooleanExpression을 반환하는 메소드를 만들고 해당 조건들을 queryFactory의 where절에 사용합니다.
+```
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/547d507a-f1e3-4fcf-b512-98d5a95e90da)
+```
+상품 판매 상태에 따른 상품 조회 조건입니다.
+```
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/6f76cb49-a1fc-4ef7-bd65-eaad393208da)
+```
+searchDateType의 값에 따라서 dateTime의 값을 이전 시간의 값으로 세팅 후 해당 시간 이후 등록된 상품만 조회합니다.
+```
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/b6332a4c-47c0-4ec8-a782-9464ad6dc9b2)
+```
+searchBy의 값에 따라서 상품명에 검색어를 포함하고 있는 상품 또는 상품 생성자의 아이디에 검색어를 포함하고 있는 상품을
+조회하도록 합니다.
+```
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/ca392efb-d7ca-464a-803f-c41cbc2c5b16)
+```
+getAdminItemPage 메소드를 오버라이딩하여 구현합니다. 조회한 데이터를 Page클래스의 구현체 PageImpl 객체로 반환합니다.
+```
+#### ItemRepository 수정
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/87490afe-8036-4152-a237-4f107efb0c89)
+```
+ItemRepository 인터페이스에서 ItemRepositoryCustom 인터페이스를 상속합니다.
+상품 관리 페이지 목록을 불러오는 getAdminItemPage 메소드를 사용할 수 있습니다.
+```
+#### ItemService 수정
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/02dbfcf4-d36f-4140-8491-28a8c5b60a94)
+```
+ItemService 클래스에 상품 조회 조건과 페이징 정보를 파라미터로 받아서 상품 데이터를 조회하는 getAdminItemPage() 메소드를
+추가합니다.
+```
+#### ItemController 수정
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/75a7eaca-e915-4337-8e6f-1ab24cd57de4)
+```
+ItemContoller 클래스에 상품 관리 화면 이동 및 조회한 상품 데이터를 화면에 전달하는 로직을 구현하였습니다.
+한 페이지당 총 3개의 상품만 보여주도록 하였습니다.
+```
+#### itemMng.html script
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/3bccbf89-5094-4934-87ea-d06c1e81cf1b)
+```
+itemMng html의 스크립트 쪽 코드입니다.
+상품 검색을 할 때 주의해야 할 점은 검색 버튼을 클릭할 때 조회할 페이지 번호를 0으로 설정해서 조회해야 한다는 점입니다.
+그래야 현재 조회 조건으로 상품 데이터를 0페이지부터 조회합니다.
+```
+#### itemMng.html Table
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/e6699013-abc3-49b8-acae-d343c2eda8a4)
+```
+Table 영역에서는 조회한 상품 데이터를 그려줍니다.
+```
+#### itemMng.html 하단의 페이지 번호
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/6e626a5e-2ad6-418a-ba7e-f3085b822b4a)
+```
+첫 번째 페이지면 previous버튼을 눌렀을 때 disabled으로 선택 불가능하도록 합니다.
+previous 버튼 클릭 시 현재 페이지에서 이전 페이지로 이동하도록 page 함수를 호출합니다.
 
-
-
-
+마지막 페이지면 next 버튼을 눌렀을 때 disabled으로 선택 불가능하도록 합니다.
+next 버튼 클릭 시 현재 페이지에서 다음 페이지로 이동하도록 page 함수를 호출합니다.
+```
+#### 상품 관리 화면 구현
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/208a44d9-2b72-4889-aa9c-131bb76b8747)
+```
+상품 관리 메뉴를 클릭하면 상품 관리 화면을 볼 수 있습니다. 하단의 상품 조회 조건을 여러 가지 선택 후 검색해보면
+해당 조건에 맞는 상품들만 출력되는 것을 볼 수 있습니다.
+```
+#### attempt to recreate a file for type 빌드 오류 해결방법
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/9f16fb9e-d7b6-4f61-a30e-5d07e60bf0d0)
+```
+엔티티로 Qdomain 클래스를 생성할 때 파일이 이미 존재하고 있기 때문에 발생하는 오류로
+target/generated-sources 파일을 통째로 삭제한 후 빌드하면 오류가 해결된다.
+```
 
 ## 메인 화면
 
