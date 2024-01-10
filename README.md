@@ -352,10 +352,24 @@ ItemRepository에 메인 페이지에 보여줄 상품 리스트를 가져오는
 ```
 getMainItemPage() 메소드를 ItemRepositoryCustomImpl 클래스에 구현합니다.
 ```
-
-
-
-
+#### ItemService
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/4909aa74-fd10-4eab-ab63-4ab5ae8dacfa)
+```
+메인 페이지에 보여줄 상품 데이터를 조회하는 getMainItemPage 메소드를 ItemService 클래스에 추가합니다.
+```
+#### MainController 수정
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/20e1b23e-94b2-4135-bd1d-806dbb89ee15)
+```
+메인 페이지에 상품 데이터를 보여주기 위해서 기존에 작성한 MainController를 수정합니다.
+```
+#### Main.html 수정
+```
+상단에 쇼핑몰 배너 이미지와 검색창, 조회한 메인 아이템 상품들을 카드형태로 보여줍니다.
+```
+#### 메인 페이지 구현
+```
+상품 등록 페이지에서 등록한 상품들을 카드의 형태로 볼 수 있습니다.
+```
 
 
 
