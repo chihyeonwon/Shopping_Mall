@@ -324,8 +324,42 @@ next 버튼 클릭 시 현재 페이지에서 다음 페이지로 이동하도�
 엔티티로 Qdomain 클래스를 생성할 때 파일이 이미 존재하고 있기 때문에 발생하는 오류로
 target/generated-sources 파일을 통째로 삭제한 후 빌드하면 오류가 해결된다.
 ```
-
 ## 메인 화면
+```
+상품 메인 화면 역시 등록 화면과 마찬가지로 Querydsl을 사용하여 상품명으로 검색이 가능하도록 구현하였습니다.
+Querydsl 대신 QueryProjection을 사용하여 상품 조회 시 Item 객체로 값을 받은 후 dto 클래스로 변환하는 과정없이
+바로 dto 객체를 뽑아냈습니다.
+```
+#### MainItemDto
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/4b989657-5cbe-4f83-9d90-20422bcb0844)
+```
+메인 페이지에서 상품을 보여줄 때 사용할 MainItemDto 클래스를 생성합니다.
+```
+#### QMainItemDto
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/5127994c-c46e-4c70-9754-2c034205199e)
+```
+QueryProjection을 사용하기 위해 maven compile을 하여 QDto 파일을 생성합니다.
+```
+#### ItemRepositoryCustom에 인터페이스 추가 작성
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/3aad2660-bb52-49b3-959a-bc688174a92d)
+```
+ItemRepository에 메인 페이지에 보여줄 상품 리스트를 가져오는 getMainItemPage 메소드를 생성합니다.
+```
+#### ItemRepositoryCustomImpl에 메소드 구현
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/d20d144a-cb14-45ba-9b23-cce0d2c97e77)
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/73669cdb-064f-4fdc-bb53-e854699d04af)
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/d3f25201-e208-418b-a23a-4fc1eb908c08)
+```
+getMainItemPage() 메소드를 ItemRepositoryCustomImpl 클래스에 구현합니다.
+```
+
+
+
+
+
+
+
+
 
 ## 상품 상세 페이지
 
