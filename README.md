@@ -64,6 +64,10 @@ Ajax를 이용하여 주문 로직을 비동기 방식으로 호출하였습니�
 
 <script th:inline="javascript"> </script> 자바스크립트 영역에 order() 함수를 추가합니다.
 ```
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/7be98c04-2ceb-44cb-8dda-b4f80b67e5e9)
+```
+주문하기 버튼을 클릭했을 때 order() 함수를 호출하도록 onclick 속성을 추가합니다.
+```
 ## 주문 이력 조회하기
 
 ## 주문 취소하기
