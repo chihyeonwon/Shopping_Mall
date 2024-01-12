@@ -85,6 +85,37 @@ Ajax를 이용하여 주문 로직을 비동기 방식으로 호출하였습니�
 로그인 페이지로 이동합니다.
 ```
 ## 주문 이력 조회하기
+#### OrderItemDto
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/3feda3f5-420d-40aa-896e-5d600b416cff)
+```
+조회한 주문 데이터를 화면에 보낼 때 사용할 OrderItemDto 클래스를 작성합니다.
+```
+#### OrderHistDto
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/71265372-47a4-4588-84d7-261ba459e83b)
+```
+주문 정보를 담을 OrderHistDto 클래스를 작성합니다.
+```
+#### OrderRepository
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/fbed80b3-92e2-4b1e-817e-4bb11d3704e6)
+```
+주문 이력을 조회하는 쿼리를 작성하였습니다.
+@Query를 사용하여 JPQL의 형식으로 쿼리문을 작성하였습니다.
+현재 로그인한 사용자의 주문 데이터를 페이징 조건에 맞춰서 조회합니다.
+현재 로그인한 회원의 주문 개수가 몇 개인지 조회합니다.
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## 주문 취소하기
 
