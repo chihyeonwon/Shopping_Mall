@@ -103,19 +103,32 @@ Ajax를 이용하여 주문 로직을 비동기 방식으로 호출하였습니�
 현재 로그인한 사용자의 주문 데이터를 페이징 조건에 맞춰서 조회합니다.
 현재 로그인한 회원의 주문 개수가 몇 개인지 조회합니다.
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#### ItemImgRepository
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/193911b7-9d96-4107-9bae-1b87998444fa)
+```
+ItemImgRepository 인터페이스에는 상품의 대표 이미지를 찾는 쿼리 메소드를 추가합니다.
+구매 이력 페이지에서 주문 상품의 대표 이미지를 보여주기 위해서 추가합니다.
+```
+#### OrderService
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/303f98a1-ae6d-47b5-a7ef-0bd5c6660670)
+```
+주문 목록을 조회하는 getOrderHist 로직을 작성합니다.
+```
+#### OrderController
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/d18edf57-30ca-4474-a40c-87ac9ec2949d)
+```
+구매이력을 조회할 수 있도록 OrderController 클래스에 지금까지 구현한 로직을 호출하는 메소드인
+OrderHist를 작성합니다.
+```
+#### orderHist.html
+```
+구매 이력 페이지를 작성합니다. 구매 이력 페이지는 지금까지 만들었던 페이지와 비슷하고
+주문 목록 데이터를 보여주는 역할만 합니다.
+```
+#### 주문 이력 페이지 구현
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/eed3fb08-dbc8-44c7-8c17-d5ea829f84b3)
+```
+구매 이력 메뉴를 클릭하면 지금까지 주문했던 상품들의 목록을 화면에서 볼 수 있습니다.
+```
 ## 주문 취소하기
 
