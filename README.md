@@ -1,4 +1,4 @@
-## Order
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/50436350-ac0e-48db-a7b1-a27cbca82d2f)## Order
 
 ## 주문 기능 구현하기
 #### OutOfStockException
@@ -131,4 +131,62 @@ OrderHist를 작성합니다.
 구매 이력 메뉴를 클릭하면 지금까지 주문했던 상품들의 목록을 화면에서 볼 수 있습니다.
 ```
 ## 주문 취소하기
+```
+고객이 주문을 취소할 경우 해당 주문의 상태를 취소 상태로 만들어주고,
+주문할 때 상품의 재고를 감소시켰던만큼 다시 더해줍니다.
+```
+#### Item
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/4ab72ecd-d7e9-4ecc-9b22-a0c605fbad32)
+```
+상품의 재고를 증가시켜주는 addStock 메서드를 Item 엔티티에 구현합니다.
+```
+#### OrderItem
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/0b54a2a8-db8d-42ab-98f6-8df240967052)
+```
+주문을 취소할 경우 주문 수량만큼 상품의 재고를 증가시키는 cancel 메서드를 OrderItem 엔티티에 구현합니다.
+```
+#### Order
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/9dd09e1a-6bc1-45cd-a287-03537dece025)
+```
+주문 취소 시 주문 수량을 상품의 재고에 더해주는 로직과 주문 상태를 취소 상태로 바꿔주는
+cancelOrder 메서드를 Order 클래스에 구현합니다.
+```
+#### OrderService
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/11934f6f-46ce-4c09-8709-3cfb2adbf7ba)
+```
+OrderService에 현재 로그인한 사용자가 주문 데이터를 생성한 사용자와 같은지 검사하는 validateOrder 메서드와
+주문을 취소하는 cancelOrder 메서드를 구현합니다.
+```
+#### OrderController
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/42949f8f-264e-45a8-a134-1a94ee7a7f38)
+```
+OrderController 크래스에 주문번호(orderId)를 받아서 주문 취소 로직을 호출하는 cancelOrder 메서드를 만듭니다.
+비동기 요청을 받아서 처리합니다.
+```
+#### orderHist.html
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/e164146c-feea-4496-8fde-68d6fe36ba55)
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/4ded2630-2ba4-4839-bf35-2c8a1d607b7d)
+```
+주문 취소 기능을 호출하는 cancelOrder 자바스크립트 함수를 생성합니다.
+```
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/26d98194-3d0b-46cc-aa6f-abd68ef9d40f)
+```
+주문취소 버튼을 눌렀을 때 cancelOrder() 함수를 호출하도록 onclick 속성을 추가합니다.
+```
+#### 주문 취소 기능 구현
+
+```
+주문 취소 버튼을 클릭하면 "취소 완료"라는 텍스트 메시지가 보입니다.
+```
+
+
+
+
+
+
+
+
+
+
+
 
