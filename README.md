@@ -1,4 +1,4 @@
-![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/50436350-ac0e-48db-a7b1-a27cbca82d2f)## Order
+## Order
 
 ## 주문 기능 구현하기
 #### OutOfStockException
@@ -174,7 +174,8 @@ OrderController 크래스에 주문번호(orderId)를 받아서 주문 취소 �
 주문취소 버튼을 눌렀을 때 cancelOrder() 함수를 호출하도록 onclick 속성을 추가합니다.
 ```
 #### 주문 취소 기능 구현
-
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/48cd4f90-8098-4695-8a3a-076162b95b30)
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/016e839a-5890-4cb3-a2d3-70ddbcfd5a95)
 ```
 주문 취소 버튼을 클릭하면 "취소 완료"라는 텍스트 메시지가 보입니다.
 ```
