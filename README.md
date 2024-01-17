@@ -53,10 +53,52 @@
 ```
 장바구님 담기 버튼을 클릭하면 상품을 장바구니에 담았다는 메시지가 나타나고 확인을 누르면 메인 페이지로 이동합니다.
 ```
-
-
-
 ## 장바구니 조회하기
+#### CartItemDto
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/3395d632-b963-42e3-9b0c-06e2c8738ef0)
+```
+장바구니 조회 페이지에 전달할 장바구니 상품 Dto 클래스를 작성합니다.
+JPQL로 쿼리 작성시 생성자를 이용해서 DTO로 바로 변환하는 방법을 사용합니다.
+```
+#### CartItemRepository
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/df64bcc5-0f6e-4061-bf4b-b598be738c40)
+```
+장바구니 페이지에 전달할 CartDetailDto 리스트를 쿼리 하나로 조회하는 JPQL문을 작성합니다.
+성능최적화가 필요할 때 DTO의 생성자를 이용하여 반환 값으로 DTO 객체를 생성할 수 있습니다.
+```
+#### CartService
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/1ecc85a6-7a0e-4e33-ba18-910b926cead8)
+```
+현재 로그인한 회원의 정보를 이용하여 장바구니에 들어있는 상품을 조회하는 getCartList를 작성합니다.
+```
+#### CartController
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/d4dd5f1c-e60c-4906-b2e4-ab9f1f4e5749)
+```
+장바구니 페이지로 이동할 수 있도록 CartController 클래스에 orderHist 메소드를 작성합니다.
+```
+#### cartList.html script
+```
+조회한 장바구니 상품 정보를 이용하여 장바구니 목록을 보여주는 페이지를 구현합니다.
+화면에서 구현해야 하는 이벤트가 많아서 자바스크립트 함수가 많습니다.
+```
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/104fff6e-28c2-4f50-8b4a-81bb0ec130fb)
+```
+총 주문 금액을 구하는 함수 입니다.
+주문 상품을 체크하거나 해제할 경우 총 주문 금액을 구하는 getOrderTotalPrice 함수를 호출하도록 합니다.
+```
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/1d5e0bee-be96-48ed-8844-cc7d93f3b3f6)
+```
+장바구니 상품의 수량 변경 시 수량과 가격을 곱해서 상품금액을 변경하는 changeCount 함수입니다.
+상품 금액을 변경 한 후 총 주문 금액을 변경하는 getOrderTotalPrice 함수를 호출합니다.
+```
+
+```
+장바구니에 들어있는 전체 상품을 체크하거나 체크 해제하는 함수입니다.
+변경된 총 주문 금액을 계산하기 위해서 getOrderTotalPrice 함수를 호출합니다.
+```
+#### 장바구니 목록 조회 페이지 구현
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/69904673-a4f6-4480-9779-66bfc3043eda)
+
 
 ## 장바구니 상품 주문하기
 
