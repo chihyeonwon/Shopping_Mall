@@ -154,9 +154,42 @@ x 버튼을 클릭하면 해당 상품을 삭제하는 deleteCartItem 자바스�
 삭제 버튼 x를 눌러서 해당 상품이 삭제되는 것을 확인할 수 있습니다.
 ```
 ## 장바구니 상품 주문하기
-
-
-
+#### CartOrderDto
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/410d142e-e037-40b7-825e-1536c35547ae)
+```
+주문할 상품 데이터를 전달할 DTO 클래스를 작성합니다.
+```
+#### OrderService
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/83ca46a2-405e-4f1e-b83c-0fb1b541d1cf)
+```
+장바구니에서 주문할 상품 데이터를 전달받아서 주문하는 Orders 메서드 작성합니다.
+```
+#### CartService
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/43c4a4f5-fe5f-41fd-a964-25cbe667a4a9)
+```
+orderDto 리스트 생성 및 주문 로직 호출, 주문한 상품은 장바구니에서 제거하는 orderCartItem 메서드를 작성합니다.
+```
+#### CartController
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/603a9244-2ece-4d52-ba77-89dcf4451c02)
+```
+CartController 클래스에 장바구니 상품의 수량을 업데이트하는 요청을 처리할 수 있도록 로직을 작성합니다.
+```
+#### cartList.html
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/1837974a-7f9c-4c9d-a143-3549bb29fa10)
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/f3996338-c5d1-4817-b351-9b2cd3900464)
+```
+장바구니에서 선택한 상품 주문을 요청하는 orders() 자바스크립트 함수를 추가합니다.
+```
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/ffaf5807-13d8-4424-a399-3e3b8e3c31a6)
+```
+주문하기 버튼의 onclick 속성에 orders()함수가 실행될 수 있도록 추가합니다.
+```
+#### 장바구니 상품 선택
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/deebc9a2-986f-4522-8059-3614400a15e1)
+#### 장바구니 상품 주문 성공
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/da8e5300-1b63-4b1e-a251-622d9f33e249)
+#### 구매 이력 확인
+![image](https://github.com/mr-won/Shopping_Mall/assets/58906858/dd8e5e65-cd9c-418b-8314-472959f0e227)
 
 
 
